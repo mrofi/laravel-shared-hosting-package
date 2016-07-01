@@ -1,0 +1,20 @@
+{
+    "name": "mrofi/laravel-shared-hosting-package",
+    "description": "Laravel Shared Hosting Package",
+    "homepage": "https://github.com/mrofi/laravel-shared-hosting-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mokhamad Rofiudin",
+            "email": "mokh.rofiudin@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "5.2.*",
+    },
+    "autoload": {
+        "psr-4": {
+            "Mrofi\\LaravelSharedHostingPackage\\": "src/"
+        }
+    }
+}
