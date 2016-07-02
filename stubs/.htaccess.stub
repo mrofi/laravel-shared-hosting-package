@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
-        Options -MultiViews
+        Options -Indexes
     </IfModule>
 
     RewriteEngine On
@@ -18,3 +18,13 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
+
+<FilesMatch "(^\.|^artisan$|\.php$|\.js$|\.json$|\.xml$|\.md$|\.lock$)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "^index.php$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
