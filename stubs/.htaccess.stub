@@ -19,7 +19,7 @@
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
 
-<FilesMatch "(^\.|^artisan$|\.php$|\.js$|\.json$|\.xml$|\.md$|\.lock$)">
+<FilesMatch "(.php$|^\.|^artisan$|^composer.lock$|^composer.json$|^package.json$|^phpunit.xml$|^gulpfile.js$|\.md$)">
     Order Allow,Deny
     Deny from all
 </FilesMatch>
@@ -28,3 +28,6 @@
     Order Allow,Deny
     Allow from all
 </FilesMatch>
+
+# you can add this if you want
+# ErrorDocument 403 http://yourdomain
